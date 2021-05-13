@@ -2,8 +2,13 @@ import style from './ImageGallery.module.css';
 import ImageGalleryItem from '../ImageGalleryItem/ImageGalleryItem';
 import Modal from '../Modal/Modal';
 import { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class ImageGallery extends Component {
+  static propsTypes = {
+    items: PropTypes.object.isRequired,
+  };
+
   state = {
     hits: '',
     showModal: false,

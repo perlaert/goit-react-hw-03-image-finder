@@ -1,10 +1,16 @@
 import style from './Modal.module.css';
 import { createPortal } from 'react-dom';
 import { Component } from 'react';
+import PropTypes from 'prop-types';
 
 const modalRoot = document.querySelector('#modal-root');
 
 class Modal extends Component {
+  static propsTypes = {
+    onClose: PropTypes.func.isRequired,
+    largeImageUrl: PropTypes.string.isRequired,
+  };
+
   componentDidMount() {
     window.addEventListener('keydown', this.handleKeyDown);
   }
